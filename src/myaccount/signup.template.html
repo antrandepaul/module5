@@ -47,10 +47,10 @@
                 </div>
             <div class="row form-group">
                     <div class="col-sm">
-                        <input type="text" name="menuNumber" placeholder="Your Favorite Menu Number" ng-model="user.menu" required ng-minlength="1" ng-maxlength="1">
+                        <input type="text" name="menuNumber" placeholder="Your Favorite Menu Number" ng-model="user.menu" required ng-minlength="1" ng-maxlength="3">
             
                         <span class="error" ng-if="signupForm.menuNumber.$touched && ( signupForm.menuNumber.$error.required || signupForm.menuNumber.$error.minlength || signupForm.menuNumber.$error.maxlength)">
-                            Menu Number must be 1 character long
+                            Menu Number must be 1-3 characters long
                         </span>
                         <br>
                     </div>
