@@ -1,0 +1,67 @@
+<div class="container signup">
+    <fieldset>
+        <legend>Sign Up Form</legend>
+        <div class="confirm">Your information has been saved</div>
+        <div class="error">No such menu number exists</div>
+        <br>
+        <form name="signupForm" novalidate class="form-group">
+
+            <div class="row form-group">
+                <div class="col-sm">
+                    <input type="text" name="firstname" placeholder="Your First Name" ng-model="user.firstname" required minlength="2">
+                </div>
+            
+                <span class="error" ng-if="signupForm.firstname.$touched && (signupForm.firstname.$error.minlength || signupForm.firstname.$error.required)">
+                    First Name must be at least 2 characters long
+                </span>
+            </div>
+            <div class="row form-group">
+                    <div class="col-sm">
+                        <input type="text" name="lastname" placeholder="Your Last Name" ng-model="user.lastname" required minlength="2">
+                
+                        <span class="error" ng-if="signupForm.lastname.$touched && (signupForm.lastname.$error.minlength || signupForm.lastname.$error.required)">
+                            Last Name must be at least 2 characters long
+                        </span>
+                        <br>
+                    </div>
+            </div>
+            <div class="row form-group">
+                    <div class="col-sm">
+                        <input type="text" name="email" placeholder="Your Email" ng-model="user.email" required ng-pattern="/^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/">
+                        
+                        <span class="error" ng-if="signupForm.email.$touched  && (signupForm.phone.$error.required || signupForm.email.$error.pattern)">
+                            Email must be valid
+                        </span>
+                        <br>
+                    </div>
+                </div>            
+            <div class="row form-group">
+                    <div class="col-sm">
+                        <input type="text" name="phone" placeholder="Your Phone Number" ng-model="user.phone" required ng-pattern="/^[1-9][0-9]{9}$/">
+             
+                        <span class="error" ng-if="signupForm.phone.$touched && (signupForm.phone.$error.required || signupForm.phone.$error.pattern)">
+                            Phone Number must be valid
+                        </span>
+                        <br>
+                    </div>
+                </div>
+            <div class="row form-group">
+                    <div class="col-sm">
+                        <input type="text" name="menuNumber" placeholder="Your Favorite Menu Number" ng-model="user.menu" required ng-minlength="1" ng-maxlength="1">
+            
+                        <span class="error" ng-if="signupForm.menuNumber.$touched && ( signupForm.menuNumber.$error.required || signupForm.menuNumber.$error.minlength || signupForm.menuNumber.$error.maxlength)">
+                            Menu Number must be 1 character long
+                        </span>
+                        <br>
+                    </div>
+                </div>
+            <div class="row form-group">
+                <div class="col-sm">
+                    <input type="submit" placeholder="Submit" value="submit" ng-click="ctrl.signup(user);" ng-disabled="signupForm.$invalid">
+                </div>
+            </div>
+
+        </form>
+    </fieldset>
+    </div>
+</div>

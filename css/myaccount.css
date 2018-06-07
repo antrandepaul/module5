@@ -1,0 +1,13 @@
+div.signup div.error, div.signup div.confirm{
+    display:none;
+    
+}
+.error {
+    color: red;
+}
+div.signup div.confirm{
+    color: green;
+}
+div.my-info, div.signup{
+    padding-top: 30px;
+}
