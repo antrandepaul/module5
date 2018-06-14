@@ -7,23 +7,21 @@
     </div>
     <div class="row">
         <div class="col-sm">
-            <h1>My Favorite Menu Item</h1>
+            <h1>My Favorite Menu Item: {{ctrl.user.menuItems.category.short_name}}</h1>
         </div>
     </div>
     <div class="row">
-      <div class="col-sm-5">
-        <div class="menu-item-photo">
-            <div>{{ctrl.user.menuItems.category.short_name}}</div>
+        <div class="col-sm-5 menu-item-photo">
             <img class="img-responsive" width="250" height="150" ng-src="images/menu/{{ctrl.user.menuItems.category.short_name}}/{{ctrl.user.menuItems.category.short_name}}.jpg" alt="{{ctrl.user.menuItems.category.name}}">
         </div>
       <div class="menu-item-description col-sm-7">
-        <h3 class="menu-item-title">{{ctrl.user.menuItems.category.name}}</h3>
-        <li ng-repeat="item in ctrl.user.menuItems.menu_items">
-            <p class="menu-item-details">{{item.name}}</p>
-        </li>
-        
-    </div>
-    </div>
+            <h3 class="menu-item-title">{{ctrl.user.menuItems.category.name}}</h3>
+            <ul>
+                <li ng-repeat="item in ctrl.user.menuItems.menu_items">
+                    <p class="menu-item-details">{{item.name}}</p>
+                </li>
+            </ul>
+      </div>
     </div>
 </div>
 
