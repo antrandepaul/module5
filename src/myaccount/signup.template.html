@@ -29,18 +29,18 @@
                     <div class="col-sm">
                         <input type="text" name="email" placeholder="Your Email" ng-model="user.email" required ng-pattern="/^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/">
                         
-                        <span class="error" ng-if="signupForm.email.$touched  && (signupForm.phone.$error.required || signupForm.email.$error.pattern)">
-                            Email must be valid
+                        <span class="error" ng-if="signupForm.email.$touched  && (signupForm.email.$error.required || signupForm.email.$error.pattern)">
+                            Email must be valid (i.e jsmith@example.com)
                         </span>
                         <br>
                     </div>
                 </div>            
             <div class="row form-group">
                     <div class="col-sm">
-                        <input type="text" name="phone" placeholder="Your Phone Number" ng-model="user.phone" required ng-pattern="/^[1-9][0-9]{9}$/">
+                        <input type="text" name="phone" placeholder="Your Phone Number" ng-model="user.phone" required ng-pattern="/^[1-9][0-9][0-9]-[0-9]{3}-[0-9]{4}$/">
              
                         <span class="error" ng-if="signupForm.phone.$touched && (signupForm.phone.$error.required || signupForm.phone.$error.pattern)">
-                            Phone Number must be valid
+                            Phone Number must be valid (valid format ###-###-###)
                         </span>
                         <br>
                     </div>
