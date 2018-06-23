@@ -20,18 +20,20 @@
     }
 
     function SignUpFormLink(scope, element, attrs, controller) {
-        console.log("Link scope is: ", scope);
-        console.log("Controller instance is: ", controller);
-        console.log("Element is: ", element);
+        //console.log("Link scope is: ", scope);
+        //console.log("Controller instance is: ", controller);
+        //console.log("Element is: ", element);
 
-        scope.$watch('ctrl.isSignedUp()', function(newValue, oldValue){
-            console.log("Old value: ", oldValue);
-            console.log("New value: ", newValue);
-           
-            if(newValue === true)
+        scope.$watch('ctrl.isChanged()', function(newValue, oldValue){
+            console.log("Old: ", oldValue);
+            console.log("New: ", newValue);
+            console.log("ctrl.isSignedUp", scope.ctrl.isSignedUp());
+            if (newValue === oldValue) return;
+
+            if(scope.ctrl.isSignedUp())
                 displayConfirmMessage();
-            else if (scope.ctrl.user){
-                console.log("user:", scope.ctrl.user);
+            else {
+               //console.log("user:", scope.ctrl.user);
                 displayErrorMessage();
             }
           

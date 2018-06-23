@@ -16,13 +16,16 @@
         };
 
         $ctrl.$onInit = function() {
-        
+            //console.log("MyAccountService.isSignedUp()", MyAccountService.isSignedUp());
         };
 
         $ctrl.isSignedUp = function() {
             return MyAccountService.isSignedUp();
         }
 
+        $ctrl.isChanged = function() {
+            return MyAccountService.isChanged();
+        }
     }
 
 })();
